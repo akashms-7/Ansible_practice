@@ -20,6 +20,8 @@
 
 - hosts: all
   become: true
+  roles:
+    - base
   tasks:
 
   - name: create simone user
@@ -62,6 +64,8 @@
 
 - hosts: web_server
   become: true
+  roles:
+    - web_server
   tasks:
 
   - name: install apache and php packages for Ubuntu servers
@@ -99,6 +103,8 @@
 
 - hosts: db_server
   become: true
+  roles:
+    - db_server
   tasks:
 
   - name: install mariadb package(Ubuntu)
